@@ -70,6 +70,26 @@ export const constantRoutes = [
         meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
+  },
+  {
+    path: '/book',
+    component: Layout,
+    redirect: '/dashboard',
+    meta: { title: '图书管理', icon: 'dashboard', affix: true },
+    children: [
+      {
+        path: '/page1',
+        component: () => import('@/views/book/page1'),
+        name: 'Page1',
+        meta: { title: '图书管理页1',  affix: true }
+      },
+      {
+        path: '/page2',
+        component: () => import('@/views/book/page2'),
+        name: 'Page2',
+        meta: { title: '图书管理页2',  affix: true }
+      }
+    ]
   }
 ]
 
